@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kushal Kharel — Software Engineer</title>
+<meta name="description" content="Kushal Kharel — software engineer. Building things, writing about it, occasionally filming it.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="index.html" class="brand">kushal<span class="dot">.</span>dev</a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/experience.html">Experience</a>
+      <a href="pages/vlog.html">Vlog</a>
+      <a href="pages/posts.html">Posts</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">AVAILABLE FOR WORK</div>
+    <h1>Kushal Kharel builds<br>software that ships.</h1>
+    <p class="lede">Software engineer focused on backend systems and developer tooling. I write about what I build and occasionally put it on video.</p>
+
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span></div>
+      <div class="terminal-line"><span class="terminal-prompt">kushal@site</span> ~ % whoami</div>
+      <div class="terminal-line">software engineer, based in [your city]</div>
+      <div class="terminal-line"><span class="terminal-prompt">kushal@site</span> ~ % status<span class="terminal-cursor"></span></div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="pages/experience.html" class="btn btn-primary">View experience</a>
+      <a href="pages/about.html" class="btn btn-ghost">About me</a>
+      <a href="mailto:you@kushalkharel.com" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-title">Latest</span>
+      <a href="pages/posts.html" class="section-tag">all posts →</a>
+    </div>
+    <div class="posts-grid" id="home-latest">
+      <!-- Filled from shared data -->
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-title">What I work with</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-item">TypeScript / Node</div>
+      <div class="skill-item">Python</div>
+      <div class="skill-item">React</div>
+      <div class="skill-item">PostgreSQL</div>
+      <div class="skill-item">Docker</div>
+      <div class="skill-item">AWS</div>
+      <div class="skill-item">REST / GraphQL APIs</div>
+      <div class="skill-item">CI/CD</div>
+      <div class="skill-item">System design</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Kushal Kharel</span>
+    <div class="footer-links">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:you@kushalkharel.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/posts-data.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const homeLatest = document.getElementById('home-latest');
+  POSTS.slice(0, 4).forEach(p => {
+    homeLatest.innerHTML += renderPostCard(p, '');
+  });
+</script>
+</body>
+</html>

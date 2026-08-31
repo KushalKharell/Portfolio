@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building a rate limiter from scratch — Kushal Kharel</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="../index.html" class="brand">kushal<span class="dot">.</span>dev</a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../pages/about.html">About</a>
+      <a href="../pages/experience.html">Experience</a>
+      <a href="../pages/vlog.html">Vlog</a>
+      <a href="../pages/posts.html" class="active">Posts</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="post-hero">
+    <a href="../pages/posts.html" class="back-link">← All posts</a>
+    <div class="post-meta">
+      <span class="post-kind">POST</span>
+      <span>·</span>
+      <span>Aug 12, 2026</span>
+      <span>·</span>
+      <span>6 min read</span>
+    </div>
+    <h1>Building a rate limiter from scratch</h1>
+    <div class="tag-row">
+      <span class="tag">backend</span>
+      <span class="tag">systems</span>
+    </div>
+  </div>
+
+  <article class="prose">
+    <p>
+      [Intro paragraph — what problem prompted this, and what the reader will
+      walk away knowing. Replace all placeholder text with your real writeup.]
+    </p>
+
+    <h2>The problem</h2>
+    <p>
+      A short section setting up why the existing approach wasn't enough.
+    </p>
+
+    <h2>Token bucket vs. sliding window</h2>
+    <p>
+      Walk through the two approaches you considered, with a code sample if useful:
+    </p>
+    <pre><code>function allowRequest(bucket) {
+  refill(bucket);
+  if (bucket.tokens &gt;= 1) {
+    bucket.tokens -= 1;
+    return true;
+  }
+  return false;
+}</code></pre>
+
+    <h2>What I shipped</h2>
+    <p>
+      The final implementation and why it fit the constraints (traffic pattern,
+      latency budget, infra already in place).
+    </p>
+
+    <blockquote>
+      Pull a real takeaway or lesson-learned quote here if you have one.
+    </blockquote>
+
+    <h2>Takeaways</h2>
+    <ul>
+      <li>Key lesson one.</li>
+      <li>Key lesson two.</li>
+      <li>What you'd do differently next time.</li>
+    </ul>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Kushal Kharel</span>
+    <div class="footer-links">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:you@kushalkharel.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
